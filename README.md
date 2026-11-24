@@ -54,5 +54,9 @@ Eight experiments, 78 configuration/seed records, three seeds (11, 22, 33), two 
 ## Verification and scope
 37 local tests passed; nine notebooks executed successfully (the final three were run separately after an interrupted initial notebook batch); editable package installed; eight experiments run twice. No Docker executable or Ruff was available locally. CI configuration is provided, but this local record does not certify a hosted CI run. There was no hardware runtime benchmark. Tests and findings apply only to the stated scope. See [limitations](research/limitations.md).
 
+## V1.1 scientific audit
+
+The V1 baseline passed [Windows and Ubuntu CI](https://github.com/MarkRizam/machine-learning-from-scratch/actions/runs/45429324194). Input-validation regressions were corrected; 73 local tests passed. All 78 recorded benchmark records reproduced with zero maximum observed absolute difference locally. See the [scientific audit](research/audit-v1.1.md) for limitations and verification instructions. The updated branch awaits hosted CI and release review.
+
 ## Related projects and contribution
 [RizamLearning](https://github.com/MarkRizam/RizamLearning) is the central learning and research portfolio. See [mathematics-for-ai](https://github.com/MarkRizam/mathematics-for-ai) and [statistics-for-ai](https://github.com/MarkRizam/statistics-for-ai). Contributions should explain assumptions, include tests and distinguish observations from proposals. See [CONTRIBUTING](CONTRIBUTING.md) and [CITATION.cff](CITATION.cff). Original software is MIT-licensed; external dependencies and references retain their own terms. No private data or third-party datasets are redistributed.

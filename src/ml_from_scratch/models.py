@@ -16,6 +16,21 @@ def paired(x, y):
     return x, y
 
 
+def classified(x, y):
+    """Accept finite numeric or homogeneous string labels only."""
+    x, y = paired(x, y)
+    if y.dtype.kind in 'biuf':
+        if not np.isfinite(y).all():
+            raise ValueError('Expected finite class labels')
+    elif y.dtype.kind not in 'US':
+        raise ValueError('Expected numeric or homogeneous string class labels')
+    return x, y
+
+
+def integer(value, minimum):
+    return isinstance(value, (int, np.integer)) and not isinstance(value, (bool, np.bool_)) and value >= minimum
+
+
 def design(x):
     x = matrix(x)
     return np.column_stack((np.ones(len(x)), x))
@@ -40,7 +55,7 @@ class LinearRegression:
 
 class LogisticRegression:
     def __init__(self, rate=0.1, steps=2000):
-        if not np.isfinite(rate) or rate <= 0 or not isinstance(steps, int) or steps < 1:
+        if not np.isfinite(rate) or rate <= 0 or not integer(steps, 1):
             raise ValueError('Invalid optimizer configuration')
         self.rate, self.steps = rate, steps
 
@@ -71,12 +86,12 @@ class LogisticRegression:
 
 class KNN:
     def __init__(self, k=5, metric='euclidean'):
-        if not isinstance(k, int) or k < 1 or metric not in ('euclidean', 'manhattan'):
+        if not integer(k, 1) or metric not in ('euclidean', 'manhattan'):
             raise ValueError('Invalid k or metric')
         self.k, self.metric = k, metric
 
     def fit(self, x, y):
-        self.x, self.y = paired(x, y)
+        self.x, self.y = classified(x, y)
         self.x, self.y = self.x.copy(), self.y.copy()
         if self.k > len(self.x):
             raise ValueError('k exceeds training size')
@@ -97,7 +112,7 @@ class KNN:
 
 class GaussianNB:
     def fit(self, x, y):
-        x, y = paired(x, y)
+        x, y = classified(x, y)
         self.classes, counts = np.unique(y, return_counts=True)
         self.priors = counts/len(y)
         self.means = np.array([x[y == c].mean(0) for c in self.classes])
@@ -118,7 +133,7 @@ class PCA:
 
     def fit(self, x):
         x = matrix(x)
-        if len(x) < 2 or not isinstance(self.n_components, int) or not 1 <= self.n_components <= min(x.shape):
+        if len(x) < 2 or not integer(self.n_components, 1) or self.n_components > min(x.shape):
             raise ValueError('Invalid component count or sample size')
         self.mean = x.mean(0)
         _, s, vt = np.linalg.svd(x-self.mean, full_matrices=False)
@@ -138,13 +153,13 @@ class PCA:
 
 class DecisionTree:
     def __init__(self, max_depth=5, min_leaf=1, criterion='gini', max_features=None, seed=42):
-        if max_depth < 0 or min_leaf < 1 or criterion not in ('gini','entropy'):
+        if not integer(max_depth, 0) or not integer(min_leaf, 1) or criterion not in ('gini','entropy') or (max_features is not None and not integer(max_features, 1)):
             raise ValueError('Invalid tree configuration')
         self.max_depth, self.min_leaf, self.criterion = max_depth, min_leaf, criterion
         self.max_features, self.seed = max_features, seed
 
     def fit(self, x, y):
-        x,y = paired(x,y)
+        x,y = classified(x,y)
         self.n_features = x.shape[1]
         self.rng = np.random.default_rng(self.seed)
         if self.max_features is not None and not 1 <= self.max_features <= self.n_features:
@@ -192,12 +207,12 @@ class DecisionTree:
 
 class RandomForest:
     def __init__(self,n_trees=10,max_depth=5,max_features=None,seed=42):
-        if not isinstance(n_trees,int) or n_trees<1:
+        if not integer(n_trees, 1) or not integer(max_depth, 0) or (max_features is not None and not integer(max_features, 1)):
             raise ValueError('Invalid tree count')
         self.n_trees,self.max_depth,self.max_features,self.seed = n_trees,max_depth,max_features,seed
 
     def fit(self,x,y):
-        x,y = paired(x,y)
+        x,y = classified(x,y)
         rng = np.random.default_rng(self.seed)
         self.trees=[]
         for _ in range(self.n_trees):
@@ -217,7 +232,7 @@ class RandomForest:
 
 class KMeans:
     def __init__(self,k=3,init='k-means++',steps=100,tol=1e-6,seed=42):
-        if not isinstance(k,int) or k<1 or init not in ('random','k-means++') or steps<1 or tol<0:
+        if not integer(k, 1) or init not in ('random','k-means++') or not integer(steps, 1) or not np.isfinite(tol) or tol<0:
             raise ValueError('Invalid clustering configuration')
         self.k,self.init,self.steps,self.tol,self.seed=k,init,steps,tol,seed
 
@@ -261,11 +276,11 @@ def gradient_descent(x,y,rate=0.05,epochs=100,batch_size=None,seed=42):
     """Least-squares optimizer. Batch size 1 gives SGD; None gives full batch."""
     x,y=paired(x,y)
     y=y.astype(float)
-    if rate<=0 or not np.isfinite(rate) or epochs<1 or not np.isfinite(y).all():
+    if rate<=0 or not np.isfinite(rate) or not integer(epochs, 1) or not np.isfinite(y).all():
         raise ValueError('Invalid optimizer inputs')
     x=design(x)
     batch_size=len(x) if batch_size is None else batch_size
-    if not isinstance(batch_size,int) or not 1<=batch_size<=len(x):
+    if not integer(batch_size, 1) or batch_size>len(x):
         raise ValueError('Invalid batch size')
     rng=np.random.default_rng(seed)
     w=np.zeros(x.shape[1]); history=[]
