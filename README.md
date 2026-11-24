@@ -1,58 +1,62 @@
-# Machine Learning From Scratch
+# Machine Learning From Scratch — AIR-001
 
-> **Development status: Planned.** Repository scaffolding only. No working implementation, experimental results, benchmark figures or completed research findings are claimed.
+**Development status: experimental implementation (unreleased).** An educational, reproducible comparison of classical machine learning algorithms implemented in NumPy. This is not a peer-reviewed publication, production library or claim of scientific novelty.
 
-## Project overview
-Machine learning algorithms implemented from scratch using Python and NumPy.
+## Research question
+How closely can transparent implementations reproduce the behavior of established machine learning libraries under controlled synthetic conditions?
 
-## Motivation
-This project is part of Mohd Rizam Bakar's learning and research portfolio while transitioning from software engineering toward AI science. Its focus is to understand and investigate small supervised-learning implementations on synthetic or licensed teaching datasets.
+## Algorithms
+Linear regression (least squares), logistic regression (unregularized binary), K-nearest neighbors, Gaussian Naive Bayes, decision trees, random forests, K-means, principal component analysis, and least-squares gradient descent (batch, stochastic and mini-batch). NumPy provides numerical primitives; scikit-learn is used exclusively as a comparison library. Eleven metrics support regression, numeric-label accuracy, binary classification and clustering.
 
-## Research objectives
-- Understand how classical learning algorithms work.
-- compare transparent implementations with reference libraries.
+## Quick start
+Python 3.13 was tested on Linux. From the repository root:
 
-## Proposed scope
-Small supervised-learning implementations on synthetic or licensed teaching datasets.
+```sh
+python -m venv .venv
+# Linux: source .venv/bin/activate
+# Windows PowerShell: .\.venv\Scripts\Activate.ps1
+python -m pip install -e ".[research]"
+python -m pytest -q
+python -m ml_from_scratch.experiments
+python scripts/execute_notebooks.py
+```
 
-## Planned technologies
-Python, NumPy, scikit-learn, pytest. These are proposed tools, not installed dependencies or implemented integrations. Record exact versions when implementation begins.
+For CPU reproducibility use one numerical-library thread (`OPENBLAS_NUM_THREADS=1`, `OMP_NUM_THREADS=1`). On PowerShell set `$env:OPENBLAS_NUM_THREADS='1'; $env:OMP_NUM_THREADS='1'`. The experiment command writes JSON and PNG/SVG figures to `results/` and `figures/` under the current directory. The notebook runner retains executed copies under `results/executed-notebooks/`.
 
-## Planned experiments or implementations
-- Implement linear and logistic regression with gradient checks.
-- Compare predictions against a reference implementation.
-- Evaluate fixed training/validation/test splits.
+```python
+from ml_from_scratch import LinearRegression
+model = LinearRegression().fit([[0], [1], [2]], [1, 3, 5])
+print(model.predict([[3]]))  # [7.]
+```
 
-## Reproducibility objectives
-- Record the research question, assumptions and acceptance criteria before each experiment.
-- Pin code revisions and environment/dependency versions; record hardware where relevant.
-- Document data sources, licences, preprocessing, splits and random seeds.
-- Compare against a stated baseline and report limitations and failure cases.
-- Provide runnable commands and reviewed artefact manifests when implementations exist.
-- Keep proposals separate from observations; report uncertainty rather than inventing results.
+## Experimental evidence
+Eight experiments, 78 configuration/seed records, three seeds (11, 22, 33), two matching runs at absolute tolerance 1e-10. All data are generated from deterministic synthetic distributions. See [protocol](research/protocol.md), [full results](results/benchmarks.json), [summary table](results/summary.csv) and [research report](research/report.md). The following are means over the three seeds, not confidence bounds or generalized performance claims.
 
-## Current status
-**Planned.** Only documentation and repository setup exist. There are no released models, published datasets, benchmark results or participant studies in this repository.
+| Experiment and metric | NumPy | Reference |
+|---|---:|---:|
+| Linear regression test MSE | 0.257542 | 0.257542 |
+| Logistic regression test accuracy | 79.17% | 79.17% |
+| Gaussian NB test accuracy | 78.33% | 78.33% |
+| KNN k=9 Euclidean validation accuracy | 76.67% | 76.67% |
+| Tree depth 3 validation accuracy | 75.00% | 75.83% |
+| Forest 7 trees, 2 candidate features validation accuracy | 76.67% | 75.83% |
+| PCA 2 components test reconstruction MSE | 0.331506 | 0.331506 |
 
-## Research and data responsibilities
-Use only public, synthetic or explicitly authorised non-sensitive material. Review dataset, model and dependency licences independently of the software licence. Do not commit credentials or private data.
+![Binary classification accuracy by model](figures/EXP-002.svg)
 
-## Repository guide
-- [Documentation](docs/README.md): intended concepts and design notes.
-- [Research](research/README.md): questions, references and protocol planning.
-- [Datasets](datasets/README.md): provenance and access requirements.
-- [Experiments](experiments/README.md): planned protocols, not completed runs.
-- [Results](results/README.md): reporting policy; no results yet.
-- [Contributing](CONTRIBUTING.md): how to propose a focused contribution.
+## Learn and reproduce
+- [Nine Jupyter notebooks](notebooks/): mathematical ideas, examples, comparisons and exercises.
+- [Algorithm notes](docs/algorithm-reference.md) and [dataset provenance](datasets/README.md).
+- [Notebook execution status](results/notebook-status.json) and [local tests](results/test-log.txt).
+- [Reproducibility and limitations](research/limitations.md).
+- [Portfolio metadata](results/portfolio-summary.json) and [RizamLearning article](docs/rizamlearning-project-article.md).
 
-## Related projects and portfolio
-- [mathematics-for-ai](https://github.com/MarkRizam/mathematics-for-ai)
-- [statistics-for-ai](https://github.com/MarkRizam/statistics-for-ai)
-- [deep-learning-from-scratch](https://github.com/MarkRizam/deep-learning-from-scratch)
-- [RizamLearning](https://github.com/MarkRizam/RizamLearning): central portfolio and knowledge-library repository (visibility is managed separately).
+## Verification and scope
+37 local tests passed; nine notebooks executed successfully (the final three were run separately after an interrupted initial notebook batch); editable package installed; eight experiments run twice. No Docker executable or Ruff was available locally. CI configuration is provided, but this local record does not certify a hosted CI run. There was no hardware runtime benchmark. Tests and findings apply only to the stated scope. See [limitations](research/limitations.md).
 
-## Citation
-[CITATION.cff](CITATION.cff) identifies this software repository and its author. It does not claim a publication, affiliation, release or DOI.
+## V1.1 scientific audit
 
-## License
-Original project software is licensed under the [MIT License](LICENSE). External datasets, pretrained models, reference documents and dependencies retain their own terms. The MIT license does not grant rights to third-party material.
+The V1 baseline passed [Windows and Ubuntu CI](https://github.com/MarkRizam/machine-learning-from-scratch/actions/runs/45429324194). Input-validation regressions were corrected; 73 local tests passed. All 78 recorded benchmark records reproduced with zero maximum observed absolute difference locally. See the [scientific audit](research/audit-v1.1.md) for limitations and verification instructions. The updated branch awaits hosted CI and release review.
+
+## Related projects and contribution
+[RizamLearning](https://github.com/MarkRizam/RizamLearning) is the central learning and research portfolio. See [mathematics-for-ai](https://github.com/MarkRizam/mathematics-for-ai) and [statistics-for-ai](https://github.com/MarkRizam/statistics-for-ai). Contributions should explain assumptions, include tests and distinguish observations from proposals. See [CONTRIBUTING](CONTRIBUTING.md) and [CITATION.cff](CITATION.cff). Original software is MIT-licensed; external dependencies and references retain their own terms. No private data or third-party datasets are redistributed.

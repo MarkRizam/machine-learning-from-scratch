@@ -1,0 +1,342 @@
+{
+  "project_id": "AIR-001",
+  "title": "Machine Learning From Scratch",
+  "repository": "https://github.com/MarkRizam/machine-learning-from-scratch",
+  "category": "AI and Machine Learning Foundations",
+  "status": "experimental implementation; not released",
+  "research_question": "How closely can transparent NumPy implementations reproduce reference behavior on controlled synthetic datasets?",
+  "algorithms": [
+    "Linear regression",
+    "Logistic regression",
+    "K-nearest neighbors",
+    "Gaussian Naive Bayes",
+    "Decision tree",
+    "Random forest",
+    "K-means",
+    "PCA",
+    "Least-squares gradient descent"
+  ],
+  "experiments": 8,
+  "records": 78,
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "dataset": "Deterministic synthetic data; no external datasets",
+  "metrics": 11,
+  "benchmark_summary": [
+    {
+      "experiment": "EXP-001",
+      "configuration": "OLS vs GD",
+      "metric": "test MSE",
+      "n": 3,
+      "ours_mean": 0.2575418748590881,
+      "ours_sd": 0.06592637800722144,
+      "reference_mean": 0.25754187485908825,
+      "reference_sd": 0.06592637800722137
+    },
+    {
+      "experiment": "EXP-002",
+      "configuration": "logistic",
+      "metric": "test accuracy",
+      "n": 3,
+      "ours_mean": 0.7916666666666666,
+      "ours_sd": 0.05773502691896257,
+      "reference_mean": 0.7916666666666666,
+      "reference_sd": 0.05773502691896257
+    },
+    {
+      "experiment": "EXP-002",
+      "configuration": "Gaussian NB",
+      "metric": "test accuracy",
+      "n": 3,
+      "ours_mean": 0.7833333333333332,
+      "ours_sd": 0.09464847243000452,
+      "reference_mean": 0.7833333333333332,
+      "reference_sd": 0.09464847243000452
+    },
+    {
+      "experiment": "EXP-003",
+      "configuration": "k=1, euclidean",
+      "metric": "validation accuracy",
+      "n": 3,
+      "ours_mean": 0.7583333333333333,
+      "ours_sd": 0.028867513459481315,
+      "reference_mean": 0.7583333333333333,
+      "reference_sd": 0.028867513459481315
+    },
+    {
+      "experiment": "EXP-003",
+      "configuration": "k=1, manhattan",
+      "metric": "validation accuracy",
+      "n": 3,
+      "ours_mean": 0.7583333333333333,
+      "ours_sd": 0.014433756729740658,
+      "reference_mean": 0.7583333333333333,
+      "reference_sd": 0.014433756729740658
+    },
+    {
+      "experiment": "EXP-003",
+      "configuration": "k=5, euclidean",
+      "metric": "validation accuracy",
+      "n": 3,
+      "ours_mean": 0.75,
+      "ours_sd": 0.025000000000000022,
+      "reference_mean": 0.75,
+      "reference_sd": 0.025000000000000022
+    },
+    {
+      "experiment": "EXP-003",
+      "configuration": "k=5, manhattan",
+      "metric": "validation accuracy",
+      "n": 3,
+      "ours_mean": 0.7583333333333333,
+      "ours_sd": 0.05773502691896256,
+      "reference_mean": 0.7583333333333333,
+      "reference_sd": 0.05773502691896256
+    },
+    {
+      "experiment": "EXP-003",
+      "configuration": "k=9, euclidean",
+      "metric": "validation accuracy",
+      "n": 3,
+      "ours_mean": 0.7666666666666666,
+      "ours_sd": 0.028867513459481315,
+      "reference_mean": 0.7666666666666666,
+      "reference_sd": 0.028867513459481315
+    },
+    {
+      "experiment": "EXP-003",
+      "configuration": "k=9, manhattan",
+      "metric": "validation accuracy",
+      "n": 3,
+      "ours_mean": 0.7666666666666666,
+      "ours_sd": 0.07637626158259735,
+      "reference_mean": 0.7666666666666666,
+      "reference_sd": 0.07637626158259735
+    },
+    {
+      "experiment": "EXP-004",
+      "configuration": "depth=1",
+      "metric": "validation accuracy",
+      "n": 3,
+      "ours_mean": 0.6166666666666666,
+      "ours_sd": 0.1233220715579062,
+      "reference_mean": 0.6166666666666666,
+      "reference_sd": 0.1233220715579062
+    },
+    {
+      "experiment": "EXP-004",
+      "configuration": "depth=3",
+      "metric": "validation accuracy",
+      "n": 3,
+      "ours_mean": 0.75,
+      "ours_sd": 0.11456439237389598,
+      "reference_mean": 0.7583333333333333,
+      "reference_sd": 0.10103629710818449
+    },
+    {
+      "experiment": "EXP-004",
+      "configuration": "depth=5",
+      "metric": "validation accuracy",
+      "n": 3,
+      "ours_mean": 0.7583333333333333,
+      "ours_sd": 0.052041649986653366,
+      "reference_mean": 0.7166666666666668,
+      "reference_sd": 0.07216878364870322
+    },
+    {
+      "experiment": "EXP-005",
+      "configuration": "trees=3, features=1",
+      "metric": "validation accuracy",
+      "n": 3,
+      "ours_mean": 0.7083333333333334,
+      "ours_sd": 0.0520416499866533,
+      "reference_mean": 0.6833333333333332,
+      "reference_sd": 0.028867513459481253
+    },
+    {
+      "experiment": "EXP-005",
+      "configuration": "trees=3, features=2",
+      "metric": "validation accuracy",
+      "n": 3,
+      "ours_mean": 0.7166666666666667,
+      "ours_sd": 0.028867513459481315,
+      "reference_mean": 0.75,
+      "reference_sd": 0.050000000000000044
+    },
+    {
+      "experiment": "EXP-005",
+      "configuration": "trees=7, features=1",
+      "metric": "validation accuracy",
+      "n": 3,
+      "ours_mean": 0.725,
+      "ours_sd": 0.0,
+      "reference_mean": 0.7333333333333334,
+      "reference_sd": 0.0520416499866533
+    },
+    {
+      "experiment": "EXP-005",
+      "configuration": "trees=7, features=2",
+      "metric": "validation accuracy",
+      "n": 3,
+      "ours_mean": 0.7666666666666666,
+      "ours_sd": 0.07637626158259735,
+      "reference_mean": 0.7583333333333333,
+      "reference_sd": 0.05773502691896256
+    },
+    {
+      "experiment": "EXP-006",
+      "configuration": "random",
+      "metric": "training inertia",
+      "n": 3,
+      "ours_mean": 6.5878099845127,
+      "ours_sd": 0.8961877349767605,
+      "reference_mean": 255.5571340654443,
+      "reference_sd": 431.80581844951917
+    },
+    {
+      "experiment": "EXP-006",
+      "configuration": "k-means++",
+      "metric": "training inertia",
+      "n": 3,
+      "ours_mean": 6.5878099845127,
+      "ours_sd": 0.8961877349767605,
+      "reference_mean": 6.587809984512698,
+      "reference_sd": 0.8961877349767599
+    },
+    {
+      "experiment": "EXP-007",
+      "configuration": "components=1",
+      "metric": "test reconstruction MSE",
+      "n": 3,
+      "ours_mean": 0.6897176642710593,
+      "ours_sd": 0.058029437420388755,
+      "reference_mean": 0.6897176642710591,
+      "reference_sd": 0.05802943742038879
+    },
+    {
+      "experiment": "EXP-007",
+      "configuration": "components=2",
+      "metric": "test reconstruction MSE",
+      "n": 3,
+      "ours_mean": 0.3315061352832925,
+      "ours_sd": 0.059367049481680804,
+      "reference_mean": 0.3315061352832925,
+      "reference_sd": 0.059367049481680804
+    },
+    {
+      "experiment": "EXP-008",
+      "configuration": "batch=1, rate=0.01",
+      "metric": "training half-MSE",
+      "n": 3,
+      "ours_mean": 0.14479399840831694,
+      "ours_sd": 0.0105083613759386,
+      "reference_mean": 0.14449600070168675,
+      "reference_sd": 0.010500330662561255
+    },
+    {
+      "experiment": "EXP-008",
+      "configuration": "batch=1, rate=0.05",
+      "metric": "training half-MSE",
+      "n": 3,
+      "ours_mean": 0.15843722632130888,
+      "ours_sd": 0.01743863325110194,
+      "reference_mean": 0.14449600070168675,
+      "reference_sd": 0.010500330662561255
+    },
+    {
+      "experiment": "EXP-008",
+      "configuration": "batch=16, rate=0.01",
+      "metric": "training half-MSE",
+      "n": 3,
+      "ours_mean": 0.14456843923261511,
+      "ours_sd": 0.010486297129674783,
+      "reference_mean": 0.14449600070168675,
+      "reference_sd": 0.010500330662561255
+    },
+    {
+      "experiment": "EXP-008",
+      "configuration": "batch=16, rate=0.05",
+      "metric": "training half-MSE",
+      "n": 3,
+      "ours_mean": 0.14462492158329035,
+      "ours_sd": 0.010544940570566293,
+      "reference_mean": 0.14449600070168675,
+      "reference_sd": 0.010500330662561255
+    },
+    {
+      "experiment": "EXP-008",
+      "configuration": "batch=120, rate=0.01",
+      "metric": "training half-MSE",
+      "n": 3,
+      "ours_mean": 2.202855911376115,
+      "ours_sd": 0.02489902942992546,
+      "reference_mean": 0.14449600070168675,
+      "reference_sd": 0.010500330662561255
+    },
+    {
+      "experiment": "EXP-008",
+      "configuration": "batch=120, rate=0.05",
+      "metric": "training half-MSE",
+      "n": 3,
+      "ours_mean": 0.14677251773383518,
+      "ours_sd": 0.010154409675163185,
+      "reference_mean": 0.14449600070168675,
+      "reference_sd": 0.010500330662561255
+    }
+  ],
+  "reproducibility": {
+    "runs": 2,
+    "atol": 1e-10,
+    "rtol": 0,
+    "status": "pass"
+  },
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "sklearn": "1.8.0",
+    "platform": "Linux",
+    "machine": "x86_64"
+  },
+  "verification": {
+    "notebooks": 9,
+    "unit_tests": 37,
+    "package_install": "pass",
+    "docker": "not run",
+    "lint": "not run (Ruff unavailable)",
+    "ci": "not yet verified"
+  },
+  "figures": [
+    "figures/EXP-001.svg",
+    "figures/EXP-002.svg",
+    "figures/EXP-003.svg",
+    "figures/EXP-004.svg",
+    "figures/EXP-005.svg",
+    "figures/EXP-006.svg",
+    "figures/EXP-007.svg",
+    "figures/EXP-008.svg"
+  ],
+  "commands": [
+    "python -m pip install -e \".[research]\"",
+    "python -m pytest -q",
+    "python -m ml_from_scratch.experiments",
+    "python scripts/execute_notebooks.py"
+  ],
+  "limitations": [
+    "Synthetic small datasets and three seeds only",
+    "Different RNG, tree splitting and forest voting rules",
+    "No runtime benchmark, no external real-world dataset",
+    "Not production-grade; not peer-reviewed",
+    "Local Linux verification; Windows/Docker pending"
+  ],
+  "related_rizamlearning_subjects": [
+    "Mathematics",
+    "Machine learning",
+    "Model evaluation",
+    "Scientific research methodology"
+  ],
+  "source_branch": "feat/air-001-machine-learning-v1",
+  "source_baseline": "f251176a8dc318fb1030bd9a39b29e891684a7e3"
+}
