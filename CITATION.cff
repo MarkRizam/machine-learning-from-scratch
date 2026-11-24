@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use or build upon this repository, cite this repository metadata."
 type: software
 title: "Machine Learning From Scratch"
-abstract: "Planned research and engineering repository; no completed implementation or research results are claimed."
+abstract: "Educational NumPy machine learning implementations and synthetic benchmark experiments."
 authors:
   - given-names: "Mohd Rizam"
     family-names: "Bakar"
@@ -10,5 +10,5 @@ repository-code: "https://github.com/MarkRizam/machine-learning-from-scratch"
 url: "https://github.com/MarkRizam/machine-learning-from-scratch"
 license: MIT
 keywords:
-  - "machine-learning"
-  - "planned"
+  - machine-learning
+  - reproducibility

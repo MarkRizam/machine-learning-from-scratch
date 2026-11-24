@@ -1,8 +1,3 @@
-# Machine Learning From Scratch: planned experiments
+# Experiment execution
 
-Status: **Planned**. The following are proposals, not completed experiments:
-- Implement linear and logistic regression with gradient checks.
-- Compare predictions against a reference implementation.
-- Evaluate fixed training/validation/test splits.
-
-Each future run should identify the question, baseline, inputs, licences, code revision, environment, seed, procedure, metrics and acceptance criteria. Record changes to the plan and explain any departures. No experiment has been run as part of this setup.
+Run `python -m ml_from_scratch.experiments` from the repository root. All eight experiment families are executed for seeds 11, 22 and 33, with 78 configuration/seed records. The script runs twice and checks numerical reproducibility at absolute tolerance 1e-10. See [protocol](../research/protocol.md) and [full results](../results/benchmarks.json). PNG and SVG figures are generated locally; no network data are used.

@@ -1,0 +1,47 @@
+{
+  "01-linear-regression.ipynb": {
+    "status": "PASS",
+    "code_cells_executed": 2,
+    "display_outputs": 1
+  },
+  "02-logistic-regression.ipynb": {
+    "status": "PASS",
+    "code_cells_executed": 2,
+    "display_outputs": 1
+  },
+  "03-knn.ipynb": {
+    "status": "PASS",
+    "code_cells_executed": 2,
+    "display_outputs": 1
+  },
+  "04-gaussian-naive-bayes.ipynb": {
+    "status": "PASS",
+    "code_cells_executed": 2,
+    "display_outputs": 1
+  },
+  "05-decision-tree.ipynb": {
+    "status": "PASS",
+    "code_cells_executed": 2,
+    "display_outputs": 1
+  },
+  "06-random-forest.ipynb": {
+    "status": "PASS",
+    "code_cells_executed": 2,
+    "display_outputs": 1
+  },
+  "07-kmeans.ipynb": {
+    "status": "PASS",
+    "code_cells_executed": 2,
+    "display_outputs": 1
+  },
+  "08-pca.ipynb": {
+    "status": "PASS",
+    "code_cells_executed": 2,
+    "display_outputs": 1
+  },
+  "09-gradient-descent.ipynb": {
+    "status": "PASS",
+    "code_cells_executed": 2,
+    "display_outputs": 1
+  }
+}

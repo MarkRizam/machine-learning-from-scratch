@@ -1,5 +1,6 @@
-# Machine Learning From Scratch: documentation plan
+# Documentation
 
-Status: **Planned**. This folder will explain small supervised-learning implementations on synthetic or licensed teaching datasets.
-
-Planned tools: Python, NumPy, scikit-learn, pytest. Future notes should distinguish conceptual explanations, design decisions and reproducible usage instructions. No setup instructions for a working implementation are available yet.
+- [Algorithm reference](algorithm-reference.md)
+- [RizamLearning article draft](rizamlearning-project-article.md)
+- [Research report](../research/report.md)
+- [Quick start](../README.md#quick-start)

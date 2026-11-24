@@ -1,0 +1,647 @@
+{
+  "project": "AIR-001",
+  "seeds": [
+    11,
+    22,
+    33
+  ],
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "sklearn": "1.8.0",
+    "platform": "Linux",
+    "machine": "x86_64"
+  },
+  "reproducibility": {
+    "runs": 2,
+    "atol": 1e-10,
+    "rtol": 0,
+    "status": "pass"
+  },
+  "records": [
+    {
+      "experiment": "EXP-001",
+      "seed": 11,
+      "configuration": "OLS vs GD",
+      "ours": 0.32925767890451685,
+      "reference": 0.32925767890451685,
+      "gradient": 0.3292576645355496,
+      "coefficient_max_delta": 3.219646771412954e-15
+    },
+    {
+      "experiment": "EXP-002",
+      "seed": 11,
+      "configuration": "logistic",
+      "ours": 0.825,
+      "reference": 0.825,
+      "ours_f1": 0.8108108108108109,
+      "reference_f1": 0.8108108108108109,
+      "ours_logloss": 0.32549932782888746,
+      "reference_logloss": 0.325499423706923
+    },
+    {
+      "experiment": "EXP-002",
+      "seed": 11,
+      "configuration": "Gaussian NB",
+      "ours": 0.85,
+      "reference": 0.85
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 11,
+      "configuration": "k=1, euclidean",
+      "ours": 0.775,
+      "reference": 0.775
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 11,
+      "configuration": "k=1, manhattan",
+      "ours": 0.775,
+      "reference": 0.775
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 11,
+      "configuration": "k=5, euclidean",
+      "ours": 0.725,
+      "reference": 0.725
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 11,
+      "configuration": "k=5, manhattan",
+      "ours": 0.725,
+      "reference": 0.725
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 11,
+      "configuration": "k=9, euclidean",
+      "ours": 0.75,
+      "reference": 0.75
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 11,
+      "configuration": "k=9, manhattan",
+      "ours": 0.7,
+      "reference": 0.7
+    },
+    {
+      "experiment": "EXP-004",
+      "seed": 11,
+      "configuration": "depth=1",
+      "ours": 0.475,
+      "reference": 0.475,
+      "ours_train": 0.7333333333333333,
+      "reference_train": 0.7333333333333333
+    },
+    {
+      "experiment": "EXP-004",
+      "seed": 11,
+      "configuration": "depth=3",
+      "ours": 0.625,
+      "reference": 0.65,
+      "ours_train": 0.8833333333333333,
+      "reference_train": 0.8833333333333333
+    },
+    {
+      "experiment": "EXP-004",
+      "seed": 11,
+      "configuration": "depth=5",
+      "ours": 0.7,
+      "reference": 0.675,
+      "ours_train": 0.95,
+      "reference_train": 0.95
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 11,
+      "configuration": "trees=3, features=1",
+      "ours": 0.65,
+      "reference": 0.7
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 11,
+      "configuration": "trees=3, features=2",
+      "ours": 0.7,
+      "reference": 0.7
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 11,
+      "configuration": "trees=7, features=1",
+      "ours": 0.725,
+      "reference": 0.775
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 11,
+      "configuration": "trees=7, features=2",
+      "ours": 0.75,
+      "reference": 0.725
+    },
+    {
+      "experiment": "EXP-006",
+      "seed": 11,
+      "configuration": "random",
+      "ours": 7.254945311718641,
+      "reference": 754.1629175545135,
+      "ours_iterations": 4.0,
+      "reference_iterations": 5.0
+    },
+    {
+      "experiment": "EXP-006",
+      "seed": 11,
+      "configuration": "k-means++",
+      "ours": 7.254945311718641,
+      "reference": 7.2549453117186395,
+      "ours_iterations": 2.0,
+      "reference_iterations": 2.0
+    },
+    {
+      "experiment": "EXP-007",
+      "seed": 11,
+      "configuration": "components=1",
+      "ours": 0.6547201879611675,
+      "reference": 0.6547201879611674,
+      "ours_variance": 1.0897419114766715,
+      "reference_variance": 1.0897419114766715
+    },
+    {
+      "experiment": "EXP-007",
+      "seed": 11,
+      "configuration": "components=2",
+      "ours": 0.2787839790233106,
+      "reference": 0.2787839790233106,
+      "ours_variance": 2.148277892730672,
+      "reference_variance": 2.148277892730672
+    },
+    {
+      "experiment": "EXP-008",
+      "seed": 11,
+      "configuration": "batch=1, rate=0.01",
+      "ours": 0.14547452966377308,
+      "reference": 0.14543190113852386,
+      "initial": 1.4970720568730418
+    },
+    {
+      "experiment": "EXP-008",
+      "seed": 11,
+      "configuration": "batch=1, rate=0.05",
+      "ours": 0.14840304624843537,
+      "reference": 0.14543190113852386,
+      "initial": 0.16734684585871484
+    },
+    {
+      "experiment": "EXP-008",
+      "seed": 11,
+      "configuration": "batch=16, rate=0.01",
+      "ours": 0.14553989749385413,
+      "reference": 0.14543190113852386,
+      "initial": 12.756000126361261
+    },
+    {
+      "experiment": "EXP-008",
+      "seed": 11,
+      "configuration": "batch=16, rate=0.05",
+      "ours": 0.14547150311134713,
+      "reference": 0.14543190113852386,
+      "initial": 6.659466685030751
+    },
+    {
+      "experiment": "EXP-008",
+      "seed": 11,
+      "configuration": "batch=120, rate=0.01",
+      "ours": 2.1975648635498457,
+      "reference": 0.14543190113852386,
+      "initial": 14.672461513349633
+    },
+    {
+      "experiment": "EXP-008",
+      "seed": 11,
+      "configuration": "batch=120, rate=0.05",
+      "ours": 0.14903424616537542,
+      "reference": 0.14543190113852386,
+      "initial": 13.490150340550278
+    },
+    {
+      "experiment": "EXP-001",
+      "seed": 22,
+      "configuration": "OLS vs GD",
+      "ours": 0.24379550613325957,
+      "reference": 0.24379550613326,
+      "gradient": 0.2437955019595833,
+      "coefficient_max_delta": 1.5543122344752192e-15
+    },
+    {
+      "experiment": "EXP-002",
+      "seed": 22,
+      "configuration": "logistic",
+      "ours": 0.825,
+      "reference": 0.825,
+      "ours_f1": 0.8,
+      "reference_f1": 0.8,
+      "ours_logloss": 0.3527041352913316,
+      "reference_logloss": 0.35270413508349935
+    },
+    {
+      "experiment": "EXP-002",
+      "seed": 22,
+      "configuration": "Gaussian NB",
+      "ours": 0.825,
+      "reference": 0.825
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 22,
+      "configuration": "k=1, euclidean",
+      "ours": 0.775,
+      "reference": 0.775
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 22,
+      "configuration": "k=1, manhattan",
+      "ours": 0.75,
+      "reference": 0.75
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 22,
+      "configuration": "k=5, euclidean",
+      "ours": 0.775,
+      "reference": 0.775
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 22,
+      "configuration": "k=5, manhattan",
+      "ours": 0.825,
+      "reference": 0.825
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 22,
+      "configuration": "k=9, euclidean",
+      "ours": 0.8,
+      "reference": 0.8
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 22,
+      "configuration": "k=9, manhattan",
+      "ours": 0.85,
+      "reference": 0.85
+    },
+    {
+      "experiment": "EXP-004",
+      "seed": 22,
+      "configuration": "depth=1",
+      "ours": 0.7,
+      "reference": 0.7,
+      "ours_train": 0.7583333333333333,
+      "reference_train": 0.7583333333333333
+    },
+    {
+      "experiment": "EXP-004",
+      "seed": 22,
+      "configuration": "depth=3",
+      "ours": 0.85,
+      "reference": 0.85,
+      "ours_train": 0.8666666666666667,
+      "reference_train": 0.8666666666666667
+    },
+    {
+      "experiment": "EXP-004",
+      "seed": 22,
+      "configuration": "depth=5",
+      "ours": 0.8,
+      "reference": 0.8,
+      "ours_train": 0.9416666666666667,
+      "reference_train": 0.9416666666666667
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 22,
+      "configuration": "trees=3, features=1",
+      "ours": 0.75,
+      "reference": 0.65
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 22,
+      "configuration": "trees=3, features=2",
+      "ours": 0.75,
+      "reference": 0.8
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 22,
+      "configuration": "trees=7, features=1",
+      "ours": 0.725,
+      "reference": 0.75
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 22,
+      "configuration": "trees=7, features=2",
+      "ours": 0.85,
+      "reference": 0.825
+    },
+    {
+      "experiment": "EXP-006",
+      "seed": 22,
+      "configuration": "random",
+      "ours": 5.5691508688260365,
+      "reference": 5.569150868826036,
+      "ours_iterations": 3.0,
+      "reference_iterations": 3.0
+    },
+    {
+      "experiment": "EXP-006",
+      "seed": 22,
+      "configuration": "k-means++",
+      "ours": 5.5691508688260365,
+      "reference": 5.569150868826036,
+      "ours_iterations": 2.0,
+      "reference_iterations": 2.0
+    },
+    {
+      "experiment": "EXP-007",
+      "seed": 22,
+      "configuration": "components=1",
+      "ours": 0.7567017345586758,
+      "reference": 0.7567017345586758,
+      "ours_variance": 1.2168650241508479,
+      "reference_variance": 1.2168650241508479
+    },
+    {
+      "experiment": "EXP-007",
+      "seed": 22,
+      "configuration": "components=2",
+      "ours": 0.3958109512844247,
+      "reference": 0.3958109512844247,
+      "ours_variance": 2.264218551090238,
+      "reference_variance": 2.264218551090238
+    },
+    {
+      "experiment": "EXP-008",
+      "seed": 22,
+      "configuration": "batch=1, rate=0.01",
+      "ours": 0.1339619113603073,
+      "reference": 0.13355904805694455,
+      "initial": 1.5091512079986302
+    },
+    {
+      "experiment": "EXP-008",
+      "seed": 22,
+      "configuration": "batch=1, rate=0.05",
+      "ours": 0.14833504546377396,
+      "reference": 0.13355904805694455,
+      "initial": 0.16074227941046584
+    },
+    {
+      "experiment": "EXP-008",
+      "seed": 22,
+      "configuration": "batch=16, rate=0.01",
+      "ours": 0.133630216182991,
+      "reference": 0.13355904805694455,
+      "initial": 12.361427679333246
+    },
+    {
+      "experiment": "EXP-008",
+      "seed": 22,
+      "configuration": "batch=16, rate=0.05",
+      "ours": 0.13368220847656462,
+      "reference": 0.13355904805694455,
+      "initial": 6.599152705426718
+    },
+    {
+      "experiment": "EXP-008",
+      "seed": 22,
+      "configuration": "batch=120, rate=0.01",
+      "ours": 2.2299752023925663,
+      "reference": 0.13355904805694455,
+      "initial": 14.140038888826382
+    },
+    {
+      "experiment": "EXP-008",
+      "seed": 22,
+      "configuration": "batch=120, rate=0.05",
+      "ours": 0.13567794566267713,
+      "reference": 0.13355904805694455,
+      "initial": 13.062729325668759
+    },
+    {
+      "experiment": "EXP-001",
+      "seed": 33,
+      "configuration": "OLS vs GD",
+      "ours": 0.19957243953948772,
+      "reference": 0.19957243953948778,
+      "gradient": 0.1995724411462466,
+      "coefficient_max_delta": 3.9968028886505635e-15
+    },
+    {
+      "experiment": "EXP-002",
+      "seed": 33,
+      "configuration": "logistic",
+      "ours": 0.725,
+      "reference": 0.725,
+      "ours_f1": 0.7441860465116279,
+      "reference_f1": 0.7441860465116279,
+      "ours_logloss": 0.5156573494848624,
+      "reference_logloss": 0.5156573653265718
+    },
+    {
+      "experiment": "EXP-002",
+      "seed": 33,
+      "configuration": "Gaussian NB",
+      "ours": 0.675,
+      "reference": 0.675
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 33,
+      "configuration": "k=1, euclidean",
+      "ours": 0.725,
+      "reference": 0.725
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 33,
+      "configuration": "k=1, manhattan",
+      "ours": 0.75,
+      "reference": 0.75
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 33,
+      "configuration": "k=5, euclidean",
+      "ours": 0.75,
+      "reference": 0.75
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 33,
+      "configuration": "k=5, manhattan",
+      "ours": 0.725,
+      "reference": 0.725
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 33,
+      "configuration": "k=9, euclidean",
+      "ours": 0.75,
+      "reference": 0.75
+    },
+    {
+      "experiment": "EXP-003",
+      "seed": 33,
+      "configuration": "k=9, manhattan",
+      "ours": 0.75,
+      "reference": 0.75
+    },
+    {
+      "experiment": "EXP-004",
+      "seed": 33,
+      "configuration": "depth=1",
+      "ours": 0.675,
+      "reference": 0.675,
+      "ours_train": 0.75,
+      "reference_train": 0.75
+    },
+    {
+      "experiment": "EXP-004",
+      "seed": 33,
+      "configuration": "depth=3",
+      "ours": 0.775,
+      "reference": 0.775,
+      "ours_train": 0.8916666666666667,
+      "reference_train": 0.8916666666666667
+    },
+    {
+      "experiment": "EXP-004",
+      "seed": 33,
+      "configuration": "depth=5",
+      "ours": 0.775,
+      "reference": 0.675,
+      "ours_train": 0.95,
+      "reference_train": 0.9583333333333334
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 33,
+      "configuration": "trees=3, features=1",
+      "ours": 0.725,
+      "reference": 0.7
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 33,
+      "configuration": "trees=3, features=2",
+      "ours": 0.7,
+      "reference": 0.75
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 33,
+      "configuration": "trees=7, features=1",
+      "ours": 0.725,
+      "reference": 0.675
+    },
+    {
+      "experiment": "EXP-005",
+      "seed": 33,
+      "configuration": "trees=7, features=2",
+      "ours": 0.7,
+      "reference": 0.725
+    },
+    {
+      "experiment": "EXP-006",
+      "seed": 33,
+      "configuration": "random",
+      "ours": 6.939333772993422,
+      "reference": 6.939333772993419,
+      "ours_iterations": 3.0,
+      "reference_iterations": 3.0
+    },
+    {
+      "experiment": "EXP-006",
+      "seed": 33,
+      "configuration": "k-means++",
+      "ours": 6.939333772993422,
+      "reference": 6.939333772993419,
+      "ours_iterations": 2.0,
+      "reference_iterations": 2.0
+    },
+    {
+      "experiment": "EXP-007",
+      "seed": 33,
+      "configuration": "components=1",
+      "ours": 0.6577310702933342,
+      "reference": 0.6577310702933342,
+      "ours_variance": 1.076453943091454,
+      "reference_variance": 1.076453943091454
+    },
+    {
+      "experiment": "EXP-007",
+      "seed": 33,
+      "configuration": "components=2",
+      "ours": 0.31992347554214234,
+      "reference": 0.31992347554214234,
+      "ours_variance": 2.042637575773867,
+      "reference_variance": 2.042637575773867
+    },
+    {
+      "experiment": "EXP-008",
+      "seed": 33,
+      "configuration": "batch=1, rate=0.01",
+      "ours": 0.1549455542008704,
+      "reference": 0.15449705290959181,
+      "initial": 1.4502451932932245
+    },
+    {
+      "experiment": "EXP-008",
+      "seed": 33,
+      "configuration": "batch=1, rate=0.05",
+      "ours": 0.17857358725171732,
+      "reference": 0.15449705290959181,
+      "initial": 0.16408486195611569
+    },
+    {
+      "experiment": "EXP-008",
+      "seed": 33,
+      "configuration": "batch=16, rate=0.01",
+      "ours": 0.15453520402100024,
+      "reference": 0.15449705290959181,
+      "initial": 12.454254916437188
+    },
+    {
+      "experiment": "EXP-008",
+      "seed": 33,
+      "configuration": "batch=16, rate=0.05",
+      "ours": 0.15472105316195928,
+      "reference": 0.15449705290959181,
+      "initial": 6.770704595219849
+    },
+    {
+      "experiment": "EXP-008",
+      "seed": 33,
+      "configuration": "batch=120, rate=0.01",
+      "ours": 2.1810276681859326,
+      "reference": 0.15449705290959181,
+      "initial": 14.179653992702965
+    },
+    {
+      "experiment": "EXP-008",
+      "seed": 33,
+      "configuration": "batch=120, rate=0.05",
+      "ours": 0.15560536137345304,
+      "reference": 0.15449705290959181,
+      "initial": 13.087624784229709
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+.....................................                                    [100%]
+=============================== warnings summary ===============================
+tests/test_models.py::test_logistic
+  /opt/pyvenv/lib/python3.13/site-packages/sklearn/linear_model/_logistic.py:1170: UserWarning: Setting penalty=None will ignore the C and l1_ratio parameters
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+37 passed, 1 warning in 2.53s
